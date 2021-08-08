@@ -8,12 +8,14 @@ while not done:
     for letter in word:
         if letter.lower() in guesses:
             print(letter, end=" ")
+
             else:
-                print("_", end=" ")
+            
+             print("_", end=" ")
         print("")
     
 
-        guesss = input(f"Allowd errors left {allowed_errors}, Nex Guess: ")
+        guesses = input(f"Allowd errors left {allowed_errors}, Nex Guess: ")
         guesses.append(guess.lower())
         if guess.lower() not in word.lower():
             allowed_errors -= 1
