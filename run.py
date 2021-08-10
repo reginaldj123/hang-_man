@@ -51,11 +51,22 @@ def yes_no(question):
     return answer
 
 
+def users_guess(options):
+    print("enter a letter from the availabe options")
+    print(options)
+    answer = input("enter your answer here \n").strip()
+    while answer not in options:
+        print(f"please choose from:",options)
+        answer = input("enter your answer here \n").strip()
+    return answer
+
 def start_game():
+    available_letters = LETTERS
     word = "Secret" 
     allowed_errors = 7
     guesses = []
     done = False
+    guess = users_guess(available_letters)
 
 
 def main():
@@ -65,7 +76,7 @@ def main():
         print("lets play")
     else: 
         print("goodbye")
-
+    start_game()
 
 
   
