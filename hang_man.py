@@ -17,6 +17,15 @@ def play(word):
     print("\n")
     while not guessed and trials > 0:
         guess = input("please guess a letter or word:").upper()
+        if len(guess) == 1 and guess.isalpha():
+
+        elif len(guess) == len(word) and guess.isalpha():
+
+        else:
+            print("not a valid guess.")
+        
+
+
 
 def display_hangman = [
 
