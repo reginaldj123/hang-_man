@@ -112,7 +112,7 @@ def play(word):
                 word_completion = "_".join(word_as_list)
                 if "_" not in word_completion:
                     guessed = True
-
+                 
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
                 print("You already guessed the word", guess)
@@ -126,6 +126,18 @@ def play(word):
 
         else:
             print("not a valid guess.")
-            print(display_hangman[trials])
-            print(word_completion)
-            print("\n")
+        print(display_hangman[trials])
+        print(word_completion)
+        print("\n")
+
+       
+def main():
+    word = get_word()
+    play(word)
+    while input("Play Again? (Y/N) ").upper() == "Y":
+        word = get_word()
+        play(word)
+
+
+if __name__ == "__main__":
+    main()
