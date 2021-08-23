@@ -1,6 +1,9 @@
 import random
 from words import word_list
 display_hangman = {
+    """
+    creting the hangman wrong answer   game display stages
+    """
 
     7: """
     ------------^
@@ -77,14 +80,21 @@ display_hangman = {
 
 
 def get_word():
+    """
+    creating the hidden word for game out of words list
+    """
     word = random.choice(word_list)
     return word.upper()
 
 
 def play(word):
-    word_completion = "_" * len(word)
-    guessed = False
-    guessed_letters = []
+    """
+    creating the number of trials the user will get.
+    creating where the letters will show up in the game.
+    creating the option to guess words and letters.
+    estabishing what the program should do if guess is right or wrong,
+    """
+    word_completion = "_" * len(word)    guessed_letters = []
     guessed_words = []
     trials = 6
     print("lets play hangman!")
@@ -135,6 +145,9 @@ def play(word):
         print("sorry you ran out of tries the word was, " + word)
     
 def yes_no(question):
+    """
+    creating the introducing question input choice answer
+    """
     print(question)
     print("yes = 1")
     print("no = 2")
@@ -145,6 +158,9 @@ def yes_no(question):
     return answer
        
 def main():
+    """
+    main program to see if user wants to play hang m an yes or no
+    """
     answer = yes_no("do you want to play hang man ?")
     if answer == "1":
         word = get_word()
