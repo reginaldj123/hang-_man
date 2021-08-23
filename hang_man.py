@@ -51,7 +51,7 @@ display_hangman = {
     ------------^
     |           |
     O           |
-   /|\          | 
+   /|\\          | 
                 |
                 |
     ------------O""",
@@ -60,8 +60,8 @@ display_hangman = {
     ------------^
     |           |
     O           |
-   /|\          |
-     \          |
+   /|\\          |
+     \\          |
                 |
     ------------O""",
 
@@ -69,8 +69,8 @@ display_hangman = {
     ------------^
     |           |
     O           |
-   /|\          |
-   / \          |
+   /|\\          |
+   / \\         |
                 |
     ------------O""",
 }
@@ -109,7 +109,7 @@ def play(word):
                 ]
                 for index in indices:
                     word_as_list[index] = guess
-                word_completion = "_".join(word_as_list)
+                word_completion = "".join(word_as_list)
                 if "_" not in word_completion:
                     guessed = True
                  
@@ -129,6 +129,11 @@ def play(word):
         print(display_hangman[trials])
         print(word_completion)
         print("\n")
+    if guessed:
+        print("congratulations you got the word, " + word)
+    else:
+        print("sorry you ran out of tries the word was, " + word)
+    
 
        
 def main():
