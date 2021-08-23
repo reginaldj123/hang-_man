@@ -2,7 +2,7 @@ import random
 from words import word_list
 display_hangman = {
     """
-    creting the hangman wrong answer   game display stages
+    creting the hangman wrong answer game display stages
     """
 
     7: """
@@ -102,7 +102,7 @@ def play(word):
     print(word_completion)
     print("\n")
     while not guessed and trials > 0:
-        guess = input("please guess a letter or word:").upper()
+        guess = input("please guess a letter or word:\n").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("you already guessed the letter", guess)
