@@ -3,7 +3,6 @@ from constants import WORD_LIST, DISPLAY_HANGMAN
 
 
 class Game:
-
     def __init__(self):
         """
         Initialize the Game
@@ -22,9 +21,51 @@ class Game:
         self.trials = 6
 
 
-"""
-creting the hangman wrong answer game display stages
-"""
+def guess(self):
+    """
+    Get input from the user
+    check if it's a letter or a word or invalid
+    if letter, see if letter is in word or was already guessed
+    if word, see if word is correct or was already guessed
+    if bad guess, decrease trials
+    track guessed letters and words as needed
+    """
+    guess = input("please guess a letter or word:\n").upper()
+    if len(guess) == 1 and guess.isalpha():
+        if guess in self.guessed_letters:
+            print("you already guessed the letter " + guess)
+        elif guess not in self.word:
+            print(guess + " is not in the word.")
+            self.trials -= 1
+            self.guessed_letters.append(guess)
+            else:
+                print("good job," + guess + "is in the word")
+                self.guessed_letters.append(guess)
+                word_as_list = list(self.word_completion)
+                indices = [
+                    i for i, letter in enumerate(game.word) if letter == guess
+                ]
+                for index in indices:
+                    word_as_list[index] = guess
+                self.word_completion = "".join(word_as_list)
+                if "_" not in self.word_completion:
+                    self.guessed = True
+        elif len(guess) > 0 and guess.isalpha():
+            if guess in game.guessed_words:
+                print("You already guessed the word " + guess)
+            elif guess != self.word:
+                print(guess + " is not the word.")
+                self.trials -= 1
+                game.guessed_words.append(guess)
+            else:
+                self.guessed = True
+                self.word_completion = self.word
+
+        else:
+            print("not a valid guess.")
+        print(DISPLAY_HANGMAN[game.trials])
+        print(self.word_completion)
+        print("\n")
 
 
 def get_word():
@@ -44,50 +85,16 @@ def play():
     """
     game = Game()
     print("lets play hangman!")
-    print(DISPLAY_HANGMAN[game.trials])
+    print(DISPLAY_HANGMAN[self.trials])
     print(game.word_completion)
     print("\n")
-    while not game.guessed and game.trials > 0:
-        guess = input("please guess a letter or word:\n").upper()
-        if len(guess) == 1 and guess.isalpha():
-            if guess in game.guessed_letters:
-                print("you already guessed the letter " + guess)
-            elif guess not in game.word:
-                print(guess + " is not in the word.")
-                game.trials -= 1
-                game.guessed_letters.append(guess)
-            else:
-                print("good job," + guess + "is in the word")
-                game.guessed_letters.append(guess)
-                word_as_list = list(game.word_completion)
-                indices = [
-                    i for i, letter in enumerate(game.word) if letter == guess
-                ]
-                for index in indices:
-                    word_as_list[index] = guess
-                game.word_completion = "".join(word_as_list)
-                if "_" not in game.word_completion:
-                    game.guessed = True
-        elif len(guess) > 0 and guess.isalpha():
-            if guess in game.guessed_words:
-                print("You already guessed the word " + guess)
-            elif guess != game.word:
-                print(guess + " is not the word.")
-                game.trials -= 1
-                game.guessed_words.append(guess)
-            else:
-                game.guessed = True
-                game.word_completion = game.word
-
-        else:
-            print("not a valid guess.")
-        print(DISPLAY_HANGMAN[game.trials])
-        print(game.word_completion)
-        print("\n")
-    if game.guessed:
-        print("congratulations you got the word, " + game.word)
+    while not game.guessed and self.trials > 0:     
+  
+        
+if game.guessed:
+    print("congratulations you got the word, " + self.word)
     else:
-        print("sorry you ran out of tries the word was, " + game.word)
+        print("sorry you ran out of tries the word was, " + self.word)
     main()
 
 
