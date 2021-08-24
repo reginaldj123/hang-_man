@@ -1,90 +1,15 @@
 import random
-from words import word_list
+from constants import WORD_LIST, DSIPLAY_HANGMAN
 """
 creting the hangman wrong answer game display stages
 """
-display_hangman = {
-    
-
-    7: """
-    ------------^
-                |
-                |
-                |
-                |
-                |
-    ------------O""",
-
-    6: """
-    ------------^
-    |           |
-                |
-                |
-                |
-                |
-    ------------O""",
-
-    5: """
-    ------------^
-    |           |
-    O           |
-                |
-                |
-                |
-    ------------O""",
-
-    4: """
-    ------------^
-    |           |
-    O           |
-    |           |
-                |
-                |
-    ------------O""",
-
-    3: """
-    ------------^
-    |           |
-    O           |
-   /|           |
-                |
-                |
-    ------------O""",
-
-    2: """
-    ------------^
-    |           |
-    O           |
-   /|\\          | 
-                |
-                |
-    ------------O""",
-
-    1: """
-    ------------^
-    |           |
-    O           |
-   /|\\          |
-     \\          |
-                |
-    ------------O""",
-
-    0: """
-    ------------^
-    |           |
-    O           |
-   /|\\          |
-   / \\         |
-                |
-    ------------O""",
-}
 
 
 def get_word():
     """
     creating the hidden word for game out of words list
     """
-    word = random.choice(word_list)
+    word = random.choice(WORD_LIST)
     return word.upper()
 
 
@@ -101,7 +26,7 @@ def play(word):
     guessed_words = []
     trials = 6
     print("lets play hangman!")
-    print(display_hangman[trials])
+    print(DSIPLAY_HANGMAN[trials])
     print(word_completion)
     print("\n")
     while not guessed and trials > 0:
@@ -139,14 +64,15 @@ def play(word):
 
         else:
             print("not a valid guess.")
-        print(display_hangman[trials])
+        print(DSIPLAY_HANGMAN[trials])
         print(word_completion)
         print("\n")
     if guessed:
         print("congratulations you got the word, " + word)
     else:
         print("sorry you ran out of tries the word was, " + word)
-    
+
+
 def yes_no(question):
     """
     creating the introducing question input choice answer
@@ -155,11 +81,12 @@ def yes_no(question):
     print("yes = 1")
     print("no = 2")
     answer = input("enter your answer here \n").strip()
-    while answer not in ("1","2"):
+    while answer not in ("1", "2"): 
         print("please choose 1 for yes and 2 for no")
         answer = input("enter your answer here \n").strip()
     return answer
-       
+
+
 def main():
     """
     main program to see if user wants to play hang m an yes or no
