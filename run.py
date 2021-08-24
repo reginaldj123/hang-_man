@@ -1,5 +1,5 @@
 import random
-from constants import WORD_LIST, DSIPLAY_HANGMAN
+from constants import WORD_LIST, DISPLAY_HANGMAN
 """
 creting the hangman wrong answer game display stages
 """
@@ -26,7 +26,7 @@ def play(word):
     guessed_words = []
     trials = 6
     print("lets play hangman!")
-    print(DSIPLAY_HANGMAN[trials])
+    print(DISPLAY_HANGMAN[trials])
     print(word_completion)
     print("\n")
     while not guessed and trials > 0:
@@ -64,7 +64,7 @@ def play(word):
 
         else:
             print("not a valid guess.")
-        print(DSIPLAY_HANGMAN[trials])
+        print(DISPLAY_HANGMAN[trials])
         print(word_completion)
         print("\n")
     if guessed:
