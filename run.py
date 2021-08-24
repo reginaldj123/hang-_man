@@ -20,30 +20,29 @@ class Game:
         self.guessed_words = []
         self.trials = 6
 
-
-def guess(self):
-    """
-    Get input from the user
-    check if it's a letter or a word or invalid
-    if letter, see if letter is in word or was already guessed
-    if word, see if word is correct or was already guessed
-    if bad guess, decrease trials
-    track guessed letters and words as needed
-    """
-    guess = input("please guess a letter or word:\n").upper()
-    if len(guess) == 1 and guess.isalpha():
-        if guess in self.guessed_letters:
-            print("you already guessed the letter " + guess)
-        elif guess not in self.word:
-            print(guess + " is not in the word.")
-            self.trials -= 1
-            self.guessed_letters.append(guess)
+    def guess(self):
+        """
+        Get input from the user
+        check if it's a letter or a word or invalid
+        if letter, see if letter is in word or was already guessed
+        if word, see if word is correct or was already guessed
+        if bad guess, decrease trials
+        track guessed letters and words as needed
+        """
+        guess = input("please guess a letter or word:\n").upper()
+        if len(guess) == 1 and guess.isalpha():
+            if guess in self.guessed_letters:
+                print("you already guessed the letter " + guess)
+            elif guess not in self.word:
+                print(guess + " is not in the word.")
+                self.trials -= 1
+                self.guessed_letters.append(guess)
             else:
                 print("good job," + guess + "is in the word")
                 self.guessed_letters.append(guess)
                 word_as_list = list(self.word_completion)
                 indices = [
-                    i for i, letter in enumerate(game.word) if letter == guess
+                    i for i, letter in enumerate(self.word) if letter == guess
                 ]
                 for index in indices:
                     word_as_list[index] = guess
@@ -51,29 +50,20 @@ def guess(self):
                 if "_" not in self.word_completion:
                     self.guessed = True
         elif len(guess) > 0 and guess.isalpha():
-            if guess in game.guessed_words:
+            if guess in self.guessed_words:
                 print("You already guessed the word " + guess)
             elif guess != self.word:
                 print(guess + " is not the word.")
                 self.trials -= 1
-                game.guessed_words.append(guess)
+                self.guessed_words.append(guess)
             else:
                 self.guessed = True
                 self.word_completion = self.word
-
         else:
             print("not a valid guess.")
-        print(DISPLAY_HANGMAN[game.trials])
+        print(DISPLAY_HANGMAN[self.trials])
         print(self.word_completion)
         print("\n")
-
-
-def get_word():
-    """
-    creating the hidden word for game out of words list
-    """
-    word = random.choice(WORD_LIST)
-    return word.upper()
 
 
 def play():
@@ -85,16 +75,15 @@ def play():
     """
     game = Game()
     print("lets play hangman!")
-    print(DISPLAY_HANGMAN[self.trials])
+    print(DISPLAY_HANGMAN[game.trials])
     print(game.word_completion)
     print("\n")
-    while not game.guessed and self.trials > 0:     
-  
-        
-if game.guessed:
-    print("congratulations you got the word, " + self.word)
+    while not game.guessed and game.trials > 0:
+        game.guess()
+    if game.guessed:
+        print("congratulations you got the word, " + game.word)
     else:
-        print("sorry you ran out of tries the word was, " + self.word)
+        print("sorry you ran out of tries the word was, " + game.word)
     main()
 
 
@@ -106,7 +95,7 @@ def yes_no(question):
     print("yes = 1")
     print("no = 2")
     answer = input("enter your answer here \n").strip()
-    while answer not in ("1", "2"): 
+    while answer not in ("1", "2"):
         print("please choose 1 for yes and 2 for no")
         answer = input("enter your answer here \n").strip()
     return answer
