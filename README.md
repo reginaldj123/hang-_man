@@ -36,13 +36,6 @@ Store data in spreadsheet so we can look up past stats
 Move game over logic out of play and into a model function
 
 
-Design Documents:
-Include a screenshot of your flow diagram
-
-Data Model
-This is where you can write up your data model 
-
-I used a class called Game to store all the properties of the game and to keep all the functions associated with the model in one place.
 
 ### Properties
 **word**: randomly generated word from the WORD_LIST
@@ -60,13 +53,8 @@ I used a class called Game to store all the properties of the game and to keep a
 None, I used standard libraries for my initial program: random and string
 
 
-Validation and 
-
-
-
-testing
-Put in your PEP8 screenshot
-Bullet point any things you have to fix to pass pep8 so you get some defects tracked since you didn’t update GITHUB issues with anything other than the original issues we found
+### Validation and testing
+<img src="blob:chrome-untrusted://media-app/c7cf77a0-257d-4235-8977-fc50f5ab520c" alt="checking code through pep8.png"/>![image](https://user-images.githubusercontent.com/80925381/130699981-e6a471e6-99da-4603-8b85-0ffff7333616.png)
 
 Manual Testing
 Bullet point out things:
@@ -79,9 +67,8 @@ Guess don’t enter anything
 Guess enter numbers
 Guess enter word with number
 Guess enter word with space
-Defects
-You really should enter some more defects into github issues for this project and then close them out and refer to that url here. https://github.com/reginaldj123/hang-_man/issues 
 
+### Defects
 
 Wrong gallows seen, order seems reversed
 User has to run program again if they want to play another game
