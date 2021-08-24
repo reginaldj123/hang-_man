@@ -1,9 +1,10 @@
 import random
 from words import word_list
+"""
+creting the hangman wrong answer game display stages
+"""
 display_hangman = {
-    """
-    creting the hangman wrong answer game display stages
-    """
+    
 
     7: """
     ------------^
@@ -94,7 +95,9 @@ def play(word):
     creating the option to guess words and letters.
     estabishing what the program should do if guess is right or wrong,
     """
-    word_completion = "_" * len(word)    guessed_letters = []
+    word_completion = "_" * len(word)    
+    guessed_letters = []
+    guessed = False
     guessed_words = []
     trials = 6
     print("lets play hangman!")
@@ -105,7 +108,7 @@ def play(word):
         guess = input("please guess a letter or word:\n").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                print("you already guessed the letter", guess)
+                print("you already guessed the letter " + guess)
             elif guess not in word:
                 print(guess + " is not in the word.")
                 trials -= 1
@@ -123,11 +126,11 @@ def play(word):
                 if "_" not in word_completion:
                     guessed = True
                  
-        elif len(guess) == len(word) and guess.isalpha():
+        elif len(guess) > 0 and guess.isalpha():
             if guess in guessed_words:
-                print("You already guessed the word", guess)
+                print("You already guessed the word " + guess)
             elif guess != word:
-                print(guess, "is not the word.")
+                print(guess + " is not the word.")
                 trials -= 1
                 guessed_words.append(guess)
             else:
