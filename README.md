@@ -149,7 +149,9 @@ It's ok to not resolve all the defects you found. If you know of something that 
 
 ### Heroku
 This section should describe the process you went through to deploy the project to Heroku. Include screenshots if you think they would make the process easier.
-<img src="blob:chrome-untrusted://media-app/d88667d2-6159-4cb5-bfdb-554bd0c5d497" alt="Signing up to heroku for deployment.png"/>![image](https://user-images.githubusercontent.com/80925381/130536201-a94a1edf-50ef-43b0-911a-2756bc1c41d2.png)
+<img src="blob:chrome-untrusted://media-app/ac0d97af-73e7-43d3-81c4-2c0b8bc8bd4f" alt="connecting to git hub through heroku.png"/>![image](https://user-images.githubusercontent.com/80925381/130536486-71be90e7-8526-4730-bcbe-532f1abd0222.png)
+<img src="blob:chrome-untrusted://media-app/0657a55a-080d-45d1-8aa9-d8e44de55e7c" alt="adding build packs.png"/>![image](https://user-images.githubusercontent.com/80925381/130536384-ad2b2ed4-34a0-4a1f-a7da-e77034531d09.png)
+![image](https://user-images.githubusercontent.com/80925381/130536318-f9564073-291e-430f-8e3a-6a4034275821.png)
 <img src="blob:chrome-untrusted://media-app/346167b5-0b56-4ffc-b8c5-c8afcb44489a" alt="Signing up to heroku for deployment.png"/>![image](https://user-images.githubusercontent.com/80925381/130536072-f17283b4-b708-4cf7-b8af-bb3f99c2bfd8.png)
 
 You may want to re-watch the [python essentials deployment video](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LS101+2021_T1/courseware/293ee9d8ff3542d3b877137ed81b9a5b/e3b664e16366444c8d722c5d8340b340/?child=first) when writing up this section.
